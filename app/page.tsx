@@ -305,7 +305,7 @@ export default function Home() {
         {/* Main Container */}
         <div className="w-full h-full flex items-center justify-between relative pl-8 lg:pl-16">
           {/* Left Section: Logo + Text + Nav Links ek hi flow me */}
-          <div className="flex items-center gap-12 lg:gap-16 h-full">
+          <div className="flex items-center gap-12 lg:gap-16 h-full lg:w-[140px] lg:shrink-0">
             <a
               href="#home"
               className="flex items-center gap-4 shrink-0 relative z-[60]"
@@ -337,7 +337,7 @@ export default function Home() {
           </div>
           <div className="">
             <nav
-              className="hidden lg:flex items-center gap-8 h-full"
+              className="hidden lg:flex items-center gap-8 h-full shrink-0"
               aria-label="Primary navigation"
             >
               {[
@@ -513,7 +513,7 @@ export default function Home() {
     "
           />
         </div>
-        .
+
         <div
           className="absolute inset-y-0 left-0 -z-10 w-[65%]"
           style={{
@@ -1057,13 +1057,9 @@ export default function Home() {
                 <div
                   className="flex gap-5 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:gap-6"
                   style={{
-                    transform: `translateX(
-      ${
-        !isMobile
-          ? `-\${serviceIndex * (50 + 1.25)}%`
-          : `-\${serviceIndex * 100}%`
-      }
-    )`,
+                    transform: isMobile
+                      ? `translateX(calc(-${serviceIndex * 100}% - ${serviceIndex * 20}px))`
+                      : `translateX(calc(-${serviceIndex * 50}% - ${serviceIndex * 12}px))`,
                   }}
                 >
                   {services.map(
