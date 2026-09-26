@@ -1074,8 +1074,9 @@ export default function Home() {
                       >
                         {/* IMAGE CARD */}
                         <div className="relative h-[440px] overflow-hidden rounded-[2px] bg-[#1a1a1a] sm:h-[500px] lg:h-[560px]">
-                          <img
+                          <Image
                             src={service.image}
+                            fill
                             alt={`${service.title} session`}
                             className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.045]"
                           />
@@ -1972,7 +1973,6 @@ export default function Home() {
         }}
       >
         <div className="" aria-hidden>
-          {/* <img src={images.running} alt="" /> */}
           <div className="results-overlay" />
           <div className="results-orange results-orange--a" />
           <div className=" absolute right-0 bottom-0 bg-orange-600 w-110 h-60 rotate-125 translate-x-70 translate-y-10" />
