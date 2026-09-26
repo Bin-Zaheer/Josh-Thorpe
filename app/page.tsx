@@ -474,21 +474,64 @@ export default function Home() {
 
         {/* Mobile Drawer */}
         {menuOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-[90px] bg-white shadow-xl p-6 flex flex-col gap-4 z-50">
+          <div
+            className="
+      lg:hidden
+      fixed inset-x-0 top-[90px]
+      z-50
+      overflow-hidden
+      bg-white
+      shadow-[0_18px_45px_rgba(0,0,0,0.12)]
+      p-6
+      flex flex-col gap-4
+      animate-[mobileMenuIn_400ms_cubic-bezier(0.22,1,0.36,1)]
+    "
+          >
             {[
               "Home",
               "About",
               "Services",
               "Results",
               "Contact",
-            ].map((label) => (
+            ].map((label, index) => (
               <a
                 key={label}
                 href={`#${label.toLowerCase()}`}
                 onClick={() => setMenuOpen(false)}
-                className="text-gray-700 font-bold text-base py-2"
+                className="
+          group
+          relative
+          py-2
+          text-base
+          font-bold
+          text-gray-700
+          transition-all
+          duration-300
+          hover:pl-2
+          hover:text-[#ff5500]
+          animate-[mobileMenuItem_500ms_cubic-bezier(0.22,1,0.36,1)_both]
+        "
+                style={{
+                  animationDelay: `${index * 55}ms`,
+                }}
               >
-                {label}
+                <span className="relative">
+                  {label}
+
+                  <span
+                    className="
+              absolute
+              -bottom-1
+              left-0
+              h-[2px]
+              w-0
+              bg-[#ff5500]
+              transition-all
+              duration-300
+              group-hover:w-full
+            "
+                  />
+                </span>
               </a>
             ))}
           </div>
@@ -497,7 +540,7 @@ export default function Home() {
 
       <section
         id="home"
-        className="relative isolate min-h-[620px] overflow-hidden bg-[#111] text-white lg:min-h-[680px]"
+        className="relative isolate min-h-0 overflow-hidden bg-[#111] text-white lg:min-h-[680px]"
       >
         {/* ================= BACKGROUND IMAGE ================= */}
         <div className="absolute inset-0 -z-30 overflow-hidden">
@@ -509,7 +552,7 @@ export default function Home() {
       h-full w-full
       object-cover object-center
       md:translate-x-0
-      translate-x-[-10px]
+      translate-x-[0px]
     "
           />
         </div>
@@ -533,8 +576,8 @@ export default function Home() {
         <div
           className="
     absolute inset-x-0 top-0 -z-10
-    h-130 md:h-32
-    bg-[linear-gradient(to_bottom,rgba(0,0,0,0.42)_0%,rgba(0,0,0,0.20)_55%,transparent_100%)]
+    h-150 md:h-32
+    bg-[linear-gradient(to_bottom,rgba(0,0,0,0.55)_100%,rgba(0,0,0,0.94)_100%,transparent_100%)]
     md:bg-[linear-gradient(to_bottom,rgba(0,0,0,0.25),transparent)]
   "
         />
@@ -547,7 +590,7 @@ export default function Home() {
           }}
         />
         {/* ================= CONTENT ================= */}
-        <div className="relative mx-auto flex min-h-[620px] w-full max-w-[1450px] items-center px-6 py-24 sm:px-10 lg:min-h-[680px] lg:px-16 xl:px-20">
+        <div className="relative mx-auto flex min-h-0 w-full max-w-[1450px] items-center px-6 py-20 sm:px-10 sm:py-24 lg:min-h-[680px] lg:px-16 xl:px-20">
           {/* LEFT CONTENT */}
           <div className="relative z-10 max-w-[620px]">
             {/* Small brand label */}
@@ -742,7 +785,7 @@ export default function Home() {
 
           {/* ================= SCROLL ================= */}
 
-          <div className="absolute bottom-7 left-6 flex items-center gap-3 sm:left-10 lg:left-16">
+          <div className="absolute bottom-7 left-6 lg:flex hidden items-center gap-3 sm:left-10 lg:left-16">
             <div className="flex h-9 w-6 items-start justify-center rounded-full border border-white/70 pt-1.5">
               <span className="h-2 w-[2px] rounded-full bg-white/90" />
             </div>
