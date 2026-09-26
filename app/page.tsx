@@ -7,13 +7,6 @@ import {
   useMemo,
   useState,
 } from "react";
-import { Playball } from "next/font/google";
-const playball = Playball({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-playball",
-  display: "swap",
-});
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
@@ -21,14 +14,6 @@ import { FaInstagram } from "react-icons/fa6";
 
 import "swiper/css";
 import "swiper/css/pagination";
-
-import localFont from "next/font/local";
-
-// 2. Rock Salt Font configuration (Ye default bold single weight aata hai)
-const priestacyFont = localFont({
-  src: "../public/fonts/Priestacy.otf",
-  variable: "--font-priestacy",
-});
 
 const ORANGE = "#FF5E1A";
 
@@ -124,9 +109,18 @@ const testimonials = [
   },
 ];
 
-function ArrowIcon() {
+interface ArrowIconProps {
+  className?: string;
+}
+
+export function ArrowIcon({
+  className = "",
+}: ArrowIconProps) {
   return (
-    <span aria-hidden className="arrow-icon">
+    <span
+      aria-hidden
+      className={`arrow-icon inline-block ${className}`}
+    >
       ↗
     </span>
   );
@@ -186,6 +180,29 @@ export default function Home() {
   const [testimonial, setTestimonial] =
     useState(0);
   const [formSent, setFormSent] = useState(false);
+
+  const [isMobile, setIsMobile] = useState(false); // Default server safe rakhne ke liye false
+
+  useEffect(() => {
+    // Yeh code sirf browser par chalega, isliye server-side build crash nahi hoga!
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Pehli baar run karne ke liye
+    handleResize();
+
+    // Event listener lagane ke liye taaki screen resize hone par update ho
+    window.addEventListener(
+      "resize",
+      handleResize,
+    );
+    return () =>
+      window.removeEventListener(
+        "resize",
+        handleResize,
+      );
+  }, []);
 
   useEffect(() => {
     const nodes =
@@ -1041,12 +1058,12 @@ export default function Home() {
                   className="flex gap-5 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:gap-6"
                   style={{
                     transform: `translateX(
-                ${
-                  window?.innerWidth >= 768
-                    ? `-${serviceIndex * (50 + 1.25)}%`
-                    : `-${serviceIndex * 100}%`
-                }
-              )`,
+      ${
+        !isMobile
+          ? `-\${serviceIndex * (50 + 1.25)}%`
+          : `-\${serviceIndex * 100}%`
+      }
+    )`,
                   }}
                 >
                   {services.map(
