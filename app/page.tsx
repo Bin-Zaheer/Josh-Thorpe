@@ -318,7 +318,7 @@ export default function Home() {
         overflow-hidden
         transition-all duration-500 ease-in-out
         ${isScrolled ? "h-14 w-14" : "mt-10 h-[140px] w-[140px] px-3 rounded-xl"}
-      `}
+       `}
               >
                 <Image
                   src="/images/logo.webp"
@@ -757,20 +757,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* ================= SLIDE INDICATOR ================= */}
-
-          {/* <div className="absolute right-8 top-8 hidden items-center gap-2 lg:flex xl:right-16">
-            <span className="text-[16px] font-bold text-white">
-              01
-            </span>
-
-            <span className="text-[11px] text-white/50">
-              / 04
-            </span>
-          </div> */}
-
-          {/* ================= VERTICAL SIDE TEXT ================= */}
-
           <div className="absolute bottom-20 right-5 hidden xl:block">
             <p className="text-right text-[10px] font-bold uppercase leading-[1.7] tracking-[0.28em] text-white/55">
               MOVE
@@ -804,33 +790,145 @@ export default function Home() {
           }}
         />
       </section>
+      <div className="relative w-full overflow-hidden bg-[#ff5e00] py-3 sm:py-2.5">
+        {/* subtle premium highlight */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/[0.10] via-transparent to-black/[0.08]"
+        />
 
-      <div className="orange-marquee" aria-hidden>
-        <div className="orange-marquee__track">
-          <span>RECOVER</span>
-          <i /> <span>REBUILD</span>
-          <i /> <span>PERFORM</span>
-          <i /> <span>MOVE BETTER</span>
-          <i />
-          <span>RECOVER</span>
-          <i /> <span>REBUILD</span>
-          <i /> <span>PERFORM</span>
-          <i /> <span>MOVE BETTER</span>
-          <i />
+        <div className="relative w-full overflow-hidden">
+          <div className="flex w-max shrink-0 animate-[jtfMarquee_24s_linear_infinite]">
+            {/* GROUP 1 */}
+            <div className="flex shrink-0 items-center gap-7 pr-7 sm:gap-9 sm:pr-9">
+              <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.22em] text-white sm:text-[11px]">
+                RECOVER
+              </span>
+
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/80" />
+
+              <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.22em] text-white sm:text-[11px]">
+                REBUILD
+              </span>
+
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/80" />
+
+              <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.22em] text-white sm:text-[11px]">
+                PERFORM
+              </span>
+
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/80" />
+
+              <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.22em] text-white sm:text-[11px]">
+                MOVE BETTER
+              </span>
+
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/80" />
+            </div>
+
+            {/* GROUP 2 */}
+            <div
+              aria-hidden="true"
+              className="flex shrink-0 items-center gap-7 pr-7 sm:gap-9 sm:pr-9"
+            >
+              <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.22em] text-white sm:text-[11px]">
+                RECOVER
+              </span>
+
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/80" />
+
+              <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.22em] text-white sm:text-[11px]">
+                REBUILD
+              </span>
+
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/80" />
+
+              <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.22em] text-white sm:text-[11px]">
+                PERFORM
+              </span>
+
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/80" />
+
+              <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.22em] text-white sm:text-[11px]">
+                MOVE BETTER
+              </span>
+
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/80" />
+            </div>
+
+            {/* GROUP 3 */}
+            <div
+              aria-hidden="true"
+              className="flex shrink-0 items-center gap-7 pr-7 sm:gap-9 sm:pr-9"
+            >
+              <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.22em] text-white sm:text-[11px]">
+                RECOVER
+              </span>
+
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/80" />
+
+              <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.22em] text-white sm:text-[11px]">
+                REBUILD
+              </span>
+
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/80" />
+
+              <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.22em] text-white sm:text-[11px]">
+                PERFORM
+              </span>
+
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/80" />
+
+              <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.22em] text-white sm:text-[11px]">
+                MOVE BETTER
+              </span>
+
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/80" />
+            </div>
+
+            {/* GROUP 4 */}
+            <div
+              aria-hidden="true"
+              className="flex shrink-0 items-center gap-7 pr-7 sm:gap-9 sm:pr-9"
+            >
+              <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.22em] text-white sm:text-[11px]">
+                RECOVER
+              </span>
+
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/80" />
+
+              <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.22em] text-white sm:text-[11px]">
+                REBUILD
+              </span>
+
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/80" />
+
+              <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.22em] text-white sm:text-[11px]">
+                PERFORM
+              </span>
+
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/80" />
+
+              <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.22em] text-white sm:text-[11px]">
+                MOVE BETTER
+              </span>
+
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/80" />
+            </div>
+          </div>
         </div>
       </div>
 
       <section
         id="about"
-        className="relative w-full min-h-screen bg-[#fafafa] overflow-hidden py-24 flex items-center font-sans"
+        className="relative w-full  bg-[#fafafa] overflow-hidden py-24 flex items-center font-sans"
       >
         {/* =========================================================================
           BACKGROUND DECORATION: Abstract Orange Slanted Blocks & Vectors
          ========================================================================= */}
 
-        <div className=" z-10 w-full max-w-[1640px] mx-auto pl-4 sm:px-12 lg:pl-16 lg:pr-0 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className=" z-10 w-full max-w-[1640px] mx-auto px-5 sm:px-12 lg:pl-16 lg:pr-0 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-5 flex items-center relative w-full">
-            {/* Desktop par bg-cover rahega aur mobile par bg-contain taake image na kate */}
             <div
               style={{
                 backgroundImage:
@@ -840,9 +938,7 @@ export default function Home() {
             ></div>
           </div>
 
-          {/* 2. CENTER GRID COLUMN: Corporate Copy Texts & Badges Matrix (Spans 4 Columns) */}
-          <div className="lg:col-span-4 flex flex-col justify-center pl-2 text-left lg:px-4 mt-8 lg:mt-0">
-            {/* Section Indicator top title */}
+          <div className="lg:col-span-4 flex flex-col justify-center px-4 text-left lg:px-4 mt-8 lg:mt-0">
             <div className="flex items-center gap-2 mb-4">
               <span className="w-7 h-[3px] bg-[#ff5500]" />
               <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#ff5500]">
@@ -977,7 +1073,7 @@ export default function Home() {
 
       <section
         id="services"
-        className="relative overflow-hidden bg-black/80  py-24 sm:py-28 lg:py-36 bg-center bg-no-repeat bg-contain"
+        className="relative overflow-hidden bg-black/80  py-24 sm:py-28 lg:py-36 bg-center bg-no-repeat bg-cover"
         style={{
           backgroundImage:
             "url('/services.webp')",
@@ -986,12 +1082,12 @@ export default function Home() {
         {/* Ambient decorative glow */}
         <div
           aria-hidden
-          className="pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-white/[0.025] blur-[120px]"
+          className="pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-white/2.5 blur-[120px]"
         />
 
         <div className="container-jtf relative mx-auto">
-          <div className="flex flex-col  gap-14 lg:flex-row lg:items-center lg:gap-16 xl:gap-24">
-            <div className="w-full lg:w-[35%] pl-3">
+          <div className="flex flex-col gap-14 md:flex-row md:items-center md:gap-10 lg:gap-16 xl:gap-24">
+            <div className="w-full min-w-0 pl-3 md:w-[38%] lg:w-[35%]">
               <div className="reveal">
                 <SectionLabel light>
                   Our Services
@@ -1092,11 +1188,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* =========================================
-          RIGHT SERVICE SLIDER
-      ========================================= */}
-            <div className="w-full lg:w-[65%]">
-              <div className="relative overflow-hidden">
+            <div className="w-full min-w-0 md:w-[62%] lg:w-[65%]">
+              <div className="relative w-full min-w-0 overflow-hidden">
                 <div
                   className="flex gap-5 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:gap-6"
                   style={{
@@ -1232,7 +1325,7 @@ export default function Home() {
         </div>
 
         {/* ================= CONTENT ================= */}
-        <div className="relative mx-auto flex w-full max-w-[1440px] flex-col px-7 sm:px-10 lg:min-h-[355px] lg:flex-row lg:px-16 xl:px-[65px]">
+        <div className="relative mx-auto flex w-full max-w-[1440px] flex-col md:flex-row px-7 sm:px-10 lg:min-h-[355px] lg:flex-row lg:px-16 xl:px-[65px]">
           {/* ================= LEFT INTRO ================= */}
           <div className="flex w-full flex-col justify-center py-3 lg:w-[34%] lg:pr-10">
             {/* Label */}
@@ -1491,7 +1584,7 @@ export default function Home() {
       relative z-10
       mx-auto
       flex w-full max-w-[1380px]
-      flex-col
+      flex-col md:flex-row
       lg:flex-row
       lg:items-center
     "
@@ -2019,7 +2112,7 @@ export default function Home() {
           <div className="results-orange results-orange--c" />
         </div>
         <div className="container-jtf results-layout">
-          <div className="results-copy reveal">
+          <div className="results-copy reveal pl-4 lg:pl-4">
             <SectionLabel light>
               Real Results
             </SectionLabel>
@@ -2062,7 +2155,7 @@ export default function Home() {
                 AFTER
               </span>
             </div>
-            <div className="results-stat-stack">
+            <div className="results-stat-stack pl-4 lg:pl-4">
               <div>
                 <strong>92%</strong>
                 <span>LESS PAIN</span>
@@ -2087,7 +2180,7 @@ export default function Home() {
         />
         <div className="container-jtf">
           <div className="testimonial-head reveal">
-            <div>
+            <div className="pl-4 lg:pl-0">
               <SectionLabel>
                 Testimonials
               </SectionLabel>
@@ -2189,7 +2282,7 @@ export default function Home() {
                 className="josh-photo"
               />
             </div>
-            <div className="josh-copy reveal">
+            <div className="josh-copy reveal pl-4 lg:pl-0">
               <SectionLabel>
                 Meet Josh Thorpe
               </SectionLabel>
@@ -2245,7 +2338,7 @@ export default function Home() {
           <div className="booking-orange" />
         </div>
         <div className="container-jtf booking-layout">
-          <div className="booking-copy reveal">
+          <div className="booking-copy reveal ">
             <SectionLabel light>
               Book Your Consultation
             </SectionLabel>
