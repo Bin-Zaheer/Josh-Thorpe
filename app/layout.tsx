@@ -1,18 +1,30 @@
-import type { Metadata } from 'next';
-import { Manrope } from 'next/font/google';
-import './globals.css';
+import type { Metadata } from "next";
+import { Manrope } from "next/font/google";
+import "./globals.css";
+import Header from "../components/myui/Header";
+import Footer from "../components/myui/Footer";
 
-const manrope = Manrope({ subsets: ['latin'], display: 'swap' });
+const manrope = Manrope({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: 'Josh Thorpe Fitness & Injury Clinic',
-  description: 'Sports therapy, personal training, injury rehabilitation and performance coaching.',
+  title: "Josh Thorpe Fitness & Injury Clinic",
+  description:
+    "Sports therapy, personal training, injury rehabilitation and performance coaching.",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={manrope.className}>{children}</body>
+      <body className={manrope.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
