@@ -46,7 +46,7 @@ export default function Abouts() {
 
       <section
         className="
-    relative min-h-screen overflow-hidden
+    relative  overflow-hidden
     border-b border-white/10
     bg-[#282828]
     text-white
@@ -126,7 +126,7 @@ export default function Abouts() {
     "
         />
 
-        <div className="relative mx-auto flex min-h-screen max-w-[1600px] items-end px-5 pb-10 pt-15 sm:px-8 sm:pb-12 lg:px-12 lg:pb-14">
+        <div className="relative mx-auto flex max-w-[1600px] items-end px-5 pb-10 pt-25 lg:pt-15 sm:px-8 sm:pb-12 lg:px-12 lg:pb-14">
           <div className="grid w-full items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             {/* LEFT */}
             <div className="relative z-10">
