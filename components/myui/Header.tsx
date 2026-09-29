@@ -163,8 +163,8 @@ const Header = () => {
             <div className="relative p-0.75 pr-0 overflow-hidden rounded-l-full rounded-r-none flex items-center">
               <div className="absolute inset-0 border-10 border-white/80 rounded-full pointer-events-none z-0" />
 
-              <a
-                href="#contact"
+              <Link
+                href="/book-now"
                 className="relative z-10 inline-flex items-center gap-3 bg-[#ff5500] hover:bg-[#e24c00] text-white px-8 py-3 text-[14px] font-bold rounded-full transition-all duration-150 active:scale-95 shadow-md shadow-orange-700/20"
               >
                 <span className="tracking-wide text-white">
@@ -174,7 +174,7 @@ const Header = () => {
                 <span className="text-[16px] font-light text-white transform group-hover:translate-x-1 transition-transform">
                   →
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -301,9 +301,9 @@ const Header = () => {
           ))}
           <div className=" border-10 border-white/80  pointer-events-none z-0" />
 
-          <a
-            href="#contact"
-            className="   gap-3 bg-[#ff5500] hover:bg-[#e24c00] text-white px-8 py-3 text-[14px] flex justify-between font-bold rounded-2xl transition-all duration-150 active:scale-95 shadow-md shadow-orange-700/20"
+          <Link
+            href="/book-now"
+            className="   gap-3 bg-[#ff5500] hover:bg-[#e24c00] text-white px-8 py-3 text-[14px] flex justify-between font-bold rounded-2xl transition-all duration-150 active:scale-95 shadow-md shadow-orange-700/20 cursor-pointer"
           >
             <span className="tracking-wide text-white">
               Book Now
@@ -312,7 +312,7 @@ const Header = () => {
             <span className="text-[16px] font-light text-white transform group-hover:translate-x-1 transition-transform">
               →
             </span>
-          </a>
+          </Link>
         </div>
       )}
     </header>

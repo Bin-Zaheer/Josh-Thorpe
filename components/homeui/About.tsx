@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const About = () => {
@@ -115,8 +116,8 @@ const About = () => {
           </div>
 
           <div className="flex">
-            <a
-              href="#services"
+            <Link
+              href="/about"
               className="group gap-3 border-2 border-[#ff5500] hover:border-[#ff5500] text-[#ff5500] hover:text-[#ffffff] hover:bg-[#ff5500] px-7 py-2 text-[15px] font-bold rounded-full transition-all duration-300 flex justify-center items-center"
             >
               <span className="text-[#ff5500] group-hover:text-[#ffffff] transition-colors duration-300 ">
@@ -125,7 +126,7 @@ const About = () => {
               <span className="text-[20px] font-bold text-[#ff5500] group-hover:text-[#ffffff] transition-colors duration-300 ">
                 →
               </span>
-            </a>
+            </Link>
           </div>
         </div>
 

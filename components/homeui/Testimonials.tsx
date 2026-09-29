@@ -10,6 +10,7 @@ import {
   SectionLabel,
 } from "../../funexpo/funexpo";
 import { testimonials } from "../../propsdata/props";
+import Link from "next/link";
 
 const Testimonials = () => {
   const [testimonial, setTestimonial] =
@@ -162,12 +163,12 @@ const Testimonials = () => {
               <span>REHABILITATION</span>
               <span>PERFORMANCE</span>
             </div>
-            <a
-              href="#contact"
+            <Link
+              href="/about"
               className="outline-button"
             >
               Meet Josh <ArrowIcon />
-            </a>
+            </Link>
           </div>
           <div
             className={`h-60 w-60 bg-center bg-no-repeat bg-cover lg:flex hidden`}

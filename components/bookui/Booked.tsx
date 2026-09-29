@@ -2113,6 +2113,7 @@ export default function Booked() {
                           group inline-flex items-center justify-center gap-2
                           rounded-full bg-[#282828]
                           px-7 py-3.5
+                          cursor-pointer
                           text-sm font-semibold text-white
                           shadow-[0_14px_30px_rgba(40,40,40,0.12)]
                           transition-all duration-300
@@ -2133,6 +2134,7 @@ export default function Booked() {
                           group inline-flex items-center justify-center gap-2
                           rounded-full bg-[#FF5E1A]
                           px-7 py-3.5
+                          cursor-pointer
                           text-sm font-semibold text-white
                           shadow-[0_14px_30px_rgba(255,94,26,0.2)]
                           transition-all duration-300

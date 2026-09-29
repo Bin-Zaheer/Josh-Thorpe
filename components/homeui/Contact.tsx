@@ -5,6 +5,7 @@ import {
   SectionLabel,
 } from "../../funexpo/funexpo";
 import Image from "next/image";
+import Link from "next/link";
 
 const Contact = () => {
   const [formSent, setFormSent] = useState(false);
@@ -97,12 +98,12 @@ const Contact = () => {
             recovery, training and performance.
           </p>
           <div className="booking-contact-row">
-            <a
-              href="#contact"
+            <Link
+              href="/about"
               className="outline-button"
             >
               Meet Josh <ArrowIcon />
-            </a>
+            </Link>
           </div>
         </div>
         <form

@@ -531,7 +531,7 @@ export default function Abouts() {
 
               <div className="mt-9">
                 <Link
-                  href="/services"
+                  href="/services#invest"
                   className="group inline-flex items-center gap-3 rounded-full  bg-[#FF5E1A] px-6 py-4 text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:bg-[#fa4c02] hover:text-white"
                 >
                   See what I offer

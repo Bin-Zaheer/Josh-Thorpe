@@ -3,6 +3,7 @@ import { FaYoutube } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import Image from "next/image";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -32,11 +33,10 @@ const Footer = () => {
             aria-label="Footer navigation"
           >
             {[
-              ["Home", "#home"],
-              ["About", "#about"],
-              ["Services", "#services"],
-              ["Results", "#results"],
-              ["Contact", "#contact"],
+              ["Home", "/"],
+              ["Services", "/services"],
+              ["About Us", "/about"],
+              ["Contact Us", "/contactus"],
             ].map(([label, href]) => (
               <a key={label} href={href}>
                 {label}
@@ -45,39 +45,32 @@ const Footer = () => {
           </nav>
           <div className="footer-social z-100">
             <a
-              href="#contact"
+              href="https://www.instagram.com/joshthorpe_fitness/"
               aria-label="Instagram"
             >
               <FaInstagram />
             </a>
-            <a
-              href="#contact"
-              aria-label="Facebook"
-            >
+            <a href="#home" aria-label="Facebook">
               <FaFacebookF />
             </a>
-            <a
-              href="#contact"
-              aria-label="YouTube"
-            >
+            <a href="#home" aria-label="YouTube">
               <FaYoutube />
             </a>
             <a
-              href="#contact"
+              href="https://wa.me/447583275586"
               aria-label="LinkedIn"
             >
-              <FaLinkedinIn />
+              <FaWhatsapp />
             </a>
           </div>
         </div>
         <div className="footer-bottom z-100">
-          <span>
+          <span className="text-white">
             © 2026 Josh Thorpe Fitness & Injury
             Clinic. All rights reserved.
           </span>
-          <span>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
+          <span className="text-[13px] text-white">
+            Powered By:BinZaheer
           </span>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Hero = () => {
@@ -15,7 +16,7 @@ const Hero = () => {
             alt="Josh Thorpe Fitness and Injury Clinic"
             className="
             h-full w-full
-            object-cover object-center
+            object-cover md:object-center object-[70%_50%]
             md:translate-x-0
             translate-x-0
     "
@@ -83,8 +84,8 @@ const Hero = () => {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-7">
-              <a
-                href="#contact"
+              <Link
+                href="/book-now"
                 className="group inline-flex h-13 items-center gap-5 rounded-full bg-[#ff5e00] lg:px-7  px-4 lg:text-[13px] text-[11px] font-bold uppercase  text-white shadow-[0_10px_35px_rgba(255,94,0,0.25)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#ff6a12] hover:shadow-[0_14px_45px_rgba(255,94,0,0.38)]"
               >
                 <span>
@@ -94,9 +95,9 @@ const Hero = () => {
                 <span className="flex h-7 w-7 items-center justify-center rounded-full  transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
-              </a>
+              </Link>
               <a
-                href="#about"
+                href="https://www.instagram.com/joshthorpe_fitness/"
                 className="group flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.08em] text-white transition-opacity duration-300 hover:opacity-80"
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/80 transition-all duration-300 group-hover:border-[#ff5e00] group-hover:bg-[#ff5e00]">

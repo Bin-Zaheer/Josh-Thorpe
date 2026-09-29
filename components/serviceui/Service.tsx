@@ -309,7 +309,7 @@ const Service = () => {
                       href={
                         index == 4
                           ? "/corporate-packages"
-                          : ""
+                          : "book-now"
                       }
                       className={`group inline-flex w-full items-center justify-between rounded-full px-6 py-4 text-[11px] font-bold uppercase tracking-[0.14em] transition duration-300 sm:w-auto sm:min-w-[220px] ${
                         dark
@@ -332,7 +332,10 @@ const Service = () => {
         );
       })}
 
-      <section className="bg-white px-5 py-20 sm:px-8 md:py-28 lg:px-12 lg:py-36 border-t border-[#858585]/40">
+      <section
+        id="invest"
+        className="bg-white px-5 py-20 sm:px-8 md:py-28 lg:px-12 lg:py-36 border-t border-[#858585]/40"
+      >
         <div className="mx-auto w-full max-w-[1440px]">
           <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-24">
             <div>
@@ -471,7 +474,7 @@ const Service = () => {
                   </div>
 
                   <Link
-                    href="#contact"
+                    href="/book-now"
                     className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#FF5E1A] px-6 py-4 text-[10px] font-bold uppercase tracking-[0.14em] text-white transition hover:bg-[#fc5108] hover:text-[#282828]"
                   >
                     Enquire →

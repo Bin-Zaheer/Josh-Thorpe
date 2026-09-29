@@ -11,6 +11,8 @@ import {
   MapPin,
   Phone,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+
 import { FaInstagram } from "react-icons/fa6";
 import { useState } from "react";
 
@@ -227,6 +229,27 @@ export default function Contacts() {
 
                     <a
                       href="tel:07583275586"
+                      className="mt-1 block text-sm font-medium transition hover:text-[#FF5E1A]"
+                    >
+                      07583 275 586
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white shadow-sm">
+                    <FaWhatsapp
+                      size={17}
+                      strokeWidth={1.6}
+                    />
+                  </div>
+
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#282828]/35">
+                      WhatsApp
+                    </p>
+
+                    <a
+                      href="https://wa.me/447583275586"
                       className="mt-1 block text-sm font-medium transition hover:text-[#FF5E1A]"
                     >
                       07583 275 586
