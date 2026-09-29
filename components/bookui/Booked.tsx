@@ -1794,10 +1794,11 @@ export default function Booked() {
               </h2>
 
               <p className="mt-4 text-[15px] leading-7 text-[#282828]/55">
-                Your enquiry has been captured on
-                this page. Check the browser
-                console to see every submitted
-                field logged individually by name.
+                Thank you for getting in touch.
+                Your enquiry has been successfully
+                submitted. Josh will review your
+                message and get back to you as
+                soon as possible.
               </p>
 
               <button
