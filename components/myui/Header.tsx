@@ -42,8 +42,8 @@ const Header = () => {
     <header className="sticky top-0 left-0 z-50 w-full bg-white h-17.5 flex items-center font-sans border-b border-gray-100 backdrop-blur-2xl shadow-2xl overflow-visible">
       <div className="w-full h-full flex items-center justify-between relative pl-8 lg:pl-16">
         <div className="flex items-center gap-12 lg:gap-16 h-full lg:w-35 lg:shrink-0">
-          <a
-            href="#home"
+          <Link
+            href="/"
             className="flex items-center gap-4 shrink-0 relative z-60"
             aria-label="Josh Thorpe Fitness & Injury Clinic home"
           >
@@ -69,7 +69,7 @@ const Header = () => {
             "
               />
             </div>
-          </a>
+          </Link>
         </div>
         <div className="">
           <nav
