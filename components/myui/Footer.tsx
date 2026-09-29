@@ -70,7 +70,7 @@ const Footer = () => {
             Clinic. All rights reserved.
           </span>
           <span className="text-[13px] text-white">
-            Powered By:BinZaheer
+            Powered by BinZaheer
           </span>
         </div>
       </div>
