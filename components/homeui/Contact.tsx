@@ -170,7 +170,6 @@ const Contact = () => {
                 ? "Message Sent"
                 : "Send Message"}{" "}
             {!formLoading && <ArrowIcon />}
-            <ArrowIcon />
           </button>
           {formError && (
             <p
