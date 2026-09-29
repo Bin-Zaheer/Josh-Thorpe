@@ -8,11 +8,67 @@ import Image from "next/image";
 
 const Contact = () => {
   const [formSent, setFormSent] = useState(false);
-  const submit = (
-    event: FormEvent<HTMLFormElement>,
+  const [formError, setFormError] = useState("");
+  const [formLoading, setFormLoading] =
+    useState(false);
+  const submit = async (
+    event: React.FormEvent<HTMLFormElement>,
   ) => {
     event.preventDefault();
-    setFormSent(true);
+
+    setFormError("");
+    setFormLoading(true);
+    setFormSent(false);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const data = {
+      name: String(formData.get("name") || ""),
+      email: String(formData.get("email") || ""),
+      service: String(
+        formData.get("service") || "",
+      ),
+      message: String(
+        formData.get("message") || "",
+      ),
+    };
+
+    try {
+      const response = await fetch(
+        "/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        },
+      );
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          result.error ||
+            "Failed to send message.",
+        );
+      }
+
+      setFormSent(true);
+
+      form.reset();
+    } catch (error) {
+      console.error("CONTACT FORM ERROR:", error);
+
+      setFormError(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again.",
+      );
+    } finally {
+      setFormLoading(false);
+    }
   };
 
   return (
@@ -107,11 +163,25 @@ const Contact = () => {
             className="orange-button orange-button--full"
             type="submit"
           >
-            {formSent
-              ? "Message Ready"
-              : "Send Message"}{" "}
+            {formLoading
+              ? "Sending..."
+              : formSent
+                ? "Message Sent"
+                : "Send Message"}{" "}
+            {!formLoading && <ArrowIcon />}
             <ArrowIcon />
           </button>
+          {formError && (
+            <p
+              style={{
+                marginTop: "12px",
+                color: "#d32f2f",
+                fontSize: "14px",
+              }}
+            >
+              {formError}
+            </p>
+          )}
         </form>
       </div>
     </section>

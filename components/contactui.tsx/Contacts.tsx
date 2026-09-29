@@ -12,8 +12,83 @@ import {
   Phone,
 } from "lucide-react";
 import { FaInstagram } from "react-icons/fa6";
+import { useState } from "react";
 
 export default function Contacts() {
+  const [formLoading, setFormLoading] =
+    useState(false);
+  const [formSent, setFormSent] = useState(false);
+  const [formError, setFormError] = useState("");
+
+  const submit = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ) => {
+    event.preventDefault();
+
+    setFormLoading(true);
+    setFormSent(false);
+    setFormError("");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const data = {
+      name: String(
+        formData.get("name") || "",
+      ).trim(),
+      email: String(
+        formData.get("email") || "",
+      ).trim(),
+      phone: String(
+        formData.get("phone") || "",
+      ).trim(),
+      service: String(
+        formData.get("service") || "",
+      ).trim(),
+      injury: String(
+        formData.get("injury") || "",
+      ).trim(),
+      message: String(
+        formData.get("message") || "",
+      ).trim(),
+    };
+
+    try {
+      const response = await fetch(
+        "/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        },
+      );
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          result.error ||
+            "Failed to send enquiry.",
+        );
+      }
+
+      setFormSent(true);
+      form.reset();
+    } catch (error) {
+      console.error("CONTACT FORM ERROR:", error);
+
+      setFormError(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again.",
+      );
+    } finally {
+      setFormLoading(false);
+    }
+  };
+
   return (
     <main className="w-full overflow-x-clip bg-[#f7f5f1] text-[#282828]">
       <section className="relative min-h-[720px] overflow-hidden bg-[#282828] text-white sm:min-h-[780px]">
@@ -202,7 +277,10 @@ export default function Contacts() {
             <div className="relative">
               <div className="pointer-events-none absolute -inset-4 rounded-[38px] bg-[#FF5E1A]/[0.035] blur-2xl" />
 
-              <form className="relative rounded-[32px] border border-black/[0.07] bg-white p-6 shadow-[0_25px_80px_rgba(40,40,40,0.07)] sm:p-8 lg:p-10">
+              <form
+                onSubmit={submit}
+                className="relative rounded-[32px] border border-black/[0.07] bg-white p-6 shadow-[0_25px_80px_rgba(40,40,40,0.07)] sm:p-8 lg:p-10"
+              >
                 <div className="flex flex-col gap-5 border-b border-black/10 pb-8 sm:flex-row sm:items-end sm:justify-between">
                   <div>
                     <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FF5E1A]">
@@ -425,12 +503,24 @@ export default function Contacts() {
                     type="submit"
                     className="group inline-flex h-14 items-center justify-center gap-3 rounded-full bg-[#FF5E1A] px-7 text-sm font-semibold text-white shadow-[0_15px_45px_rgba(255,94,26,0.22)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_55px_rgba(255,94,26,0.3)]"
                   >
-                    Send enquiry
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 transition-transform duration-300 group-hover:translate-x-1">
-                      <ArrowUpRight size={14} />
-                    </span>
+                    {" "}
+                    {formLoading
+                      ? "Sending..."
+                      : formSent
+                        ? "Enquiry sent"
+                        : "Send enquiry"}
+                    {!formLoading && (
+                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 transition-transform duration-300 group-hover:translate-x-1">
+                        <ArrowUpRight size={14} />
+                      </span>
+                    )}
                   </button>
                 </div>
+                {formError && (
+                  <p className="mt-3 text-sm font-medium text-red-600">
+                    {formError}
+                  </p>
+                )}
               </form>
             </div>
           </div>
